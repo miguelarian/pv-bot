@@ -1,3 +1,7 @@
+const Weapons: { [userId: string]: number } = {
+
+}
+
 class Weapon {
     id: string
     name: string
