@@ -1,6 +1,6 @@
 # Fucking-Fighter pv-bot
 
-This is my bot for Payvision Bots League.
+This is Fucking-Fighter bot for Payvision Bots League.
 
 ## Build dev
 

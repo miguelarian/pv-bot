@@ -2,12 +2,12 @@ import Bot from './Bot'
 
 const port = process.env.PORT || 3000
 
-console.log('*** STARTING BOT SERVER ***')
+console.log('*** STARTING FUCKING-FIGHTER BOT ***')
 
-Bot.listen(port, (err) => {
-    if (err) {
-        return console.log(err)
+Bot.listen(port, (error) => {
+    if (error) {
+        return console.log(error)
     }
 
-    return console.log(`The bot is up and running on port ${port}`)
+    return console.log(`FUCKING-FIGHTER is READY TO RUMBLE on port ${port}`)
 })
