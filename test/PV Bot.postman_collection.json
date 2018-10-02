@@ -1,85 +1,85 @@
 {
+	"variables": [],
 	"info": {
-		"_postman_id": "a49096c5-4f5f-4dec-afdc-751997cbacf1",
 		"name": "PV Bot",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"_postman_id": "b787bc06-181c-7ce3-fbb0-d8517af97154",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "/probe/ready",
 			"request": {
+				"url": "localhost:3000/probe/ready",
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic ZiNjazFOZzpmMWdIdDNy",
+						"description": ""
+					}
+				],
 				"body": {},
-				"url": {
-					"raw": "localhost:3000/probe/ready",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"probe",
-						"ready"
-					]
-				}
+				"description": ""
 			},
 			"response": []
 		},
 		{
 			"name": "/probe/alive",
 			"request": {
+				"url": "localhost:3000/probe/alive",
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic ZiNjazFOZzpmMWdIdDNy",
+						"description": ""
+					}
+				],
 				"body": {},
-				"url": {
-					"raw": "localhost:3000/probe/alive",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"probe",
-						"alive"
-					]
-				}
+				"description": ""
 			},
 			"response": []
 		},
 		{
 			"name": "/exit",
 			"request": {
+				"url": "localhost:3000/exit",
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic ZiNjazFOZzpmMWdIdDNy",
+						"description": ""
+					}
+				],
 				"body": {},
-				"url": {
-					"raw": "localhost:3000/exit",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"exit"
-					]
-				}
+				"description": ""
 			},
 			"response": []
 		},
 		{
 			"name": "/turn",
 			"request": {
+				"url": "localhost:3000/turn",
 				"method": "POST",
-				"header": [],
-				"body": {},
-				"url": {
-					"raw": "localhost:3000/turn",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"turn"
-					]
-				}
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic ZiNjazFOZzpmMWdIdDNy",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"turns\": { \"current\": 42, \"total\": 69 },\r\n    \"allies\": [\r\n        {\r\n            \"id\": \"00000000-0000-0000-0000-111111111111\",\r\n            \"name\": \"c.cobo\",\r\n            \"class\": \"payvisiano\",\r\n            \"health\": { \"current\": 100, \"total\": 100 },\r\n            \"ap\": { \"current\": 6, \"total\": 6 },\r\n            \"weapons\": [ .. ],\r\n            \"items\": [ .. ],\r\n        },\r\n        .. ],\r\n    \"enemies\": [\r\n        {\r\n            \"id\": \"00000000-0000-0000-0000-222222222222\",\r\n            \"name\": \"toq\",\r\n            \"class\": \"payvisiano\",\r\n            \"health\": { \"current\": 100, \"total\": 100 },\r\n            \"ap\": { \"current\": 6, \"total\": 6 },\r\n            \"weapons\": [ .. ],\r\n            \"items\": [ .. ],\r\n        },\r\n        .. ],\r\n    \"weapons\": [\r\n        {\r\n            \"id\": \"00000000-0000-0000-aaaa-111111111111\",\r\n            \"name\": \"Flame Sword\",\r\n            \"ap_cost\": 6,\r\n            \"ap_damage\": 20,\r\n            \"durability\": 5\r\n        },\r\n        {\r\n            \"id\": \"00000000-0000-0000-aaaa-222222222222\",\r\n            \"name\": \"Icy Dagger\",\r\n            \"ap_cost\": 3,\r\n            \"ap_damage\": 13,\r\n            \"durability\": 2\r\n        },\r\n        .. ],\r\n    \"items\": [\r\n        {\r\n            \"id\": \"00000000-0000-0000-bbbb-111111111111\",\r\n            \"name\": \"Bag of Shame\"\r\n        },\r\n        {\r\n            \"id\": \"00000000-0000-0000-bbbb-222222222222\",\r\n            \"name\": \"Soy milk coffee\"\r\n        },\r\n        .. ]\r\n}\r\n"
+				},
+				"description": ""
 			},
 			"response": []
 		}
