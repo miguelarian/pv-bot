@@ -4,22 +4,22 @@ const bodyParser = require('body-parser');
 
 app.get('/probe/ready', function (req, res) {
     console.log('/probe/ready OK')
-    res.send(200)
+    res.sendStatus(200)
 })
 
 app.get('/probe/alive', function (req, res) {
     console.log('/probe/alive OK')
-    res.send(200)
+    res.sendStatus(200)
 })
 
 app.post('/exit', function (req, res) {
     console.log('/exit OK')
-    res.send(200)
+    res.sendStatus(200)
 })
 
 app.post('/turn', function (req, res) {
     console.log('/turn OK')
-    res.send(200)
+    res.sendStatus(200)
 })
 
 console.log('*** STARTING NODE SERVER ***')
