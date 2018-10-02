@@ -2,9 +2,10 @@
   "name": "pv-bot",
   "version": "1.0.0",
   "description": "Bot application for Payvision bots league",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/miguelarian/pv-bot/issues"
   },
-  "homepage": "https://github.com/miguelarian/pv-bot#readme"
+  "homepage": "https://github.com/miguelarian/pv-bot#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
