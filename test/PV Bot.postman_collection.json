@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "a49096c5-4f5f-4dec-afdc-751997cbacf1",
+		"name": "PV Bot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/probe/ready",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/probe/ready",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"probe",
+						"ready"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/probe/alive",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/probe/alive",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"probe",
+						"alive"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/exit",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/exit",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"exit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/turn",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/turn",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"turn"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
