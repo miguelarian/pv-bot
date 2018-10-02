@@ -4,16 +4,18 @@ FROM node:8.12.0-alpine
 WORKDIR /app
 
 # Install app dependencies
-COPY package*.json ./
+COPY package.json package.json
+RUN npm install
 
-RUN npm install --only=production
+COPY . .
+RUN npm run build
 
 # Bundle app source
 COPY . .
 
 EXPOSE 8080
 
-CMD [ "npm", "start" ]
+CMD ["node", "dist/"]
 
 # build image: $ docker build -t <your username>/node-web-app .
 # check image: $ docker images
