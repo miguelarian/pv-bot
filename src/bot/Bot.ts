@@ -1,11 +1,14 @@
 import * as express from 'express'
 import * as bodyParser from 'body-parser'
 import * as basicAuth from 'express-basic-auth'
-import * as configuration from '../config/Configuration'
+import Configuration, * as configuration from '../config/Configuration'
+
 class Bot {
     public express: express.Application
+    private configuration: Configuration
 
-    constructor() {
+    constructor(configuration: Configuration) {
+        this.configuration = configuration
         this.express = express()
         this.express.use(bodyParser.json());
         this.configRouting()
@@ -13,14 +16,13 @@ class Bot {
 
     private configRouting() {
         const router = express.Router()
+        const basicAuthMiddleware = this.createBasicAuthMiddelware()
 
-        let basicAuthentication = this.getBasicAuthentication()
-
-        router.get('/probe/ready', basicAuthentication, (req, res) => {
+        router.get('/probe/ready', basicAuthMiddleware, (req, res) => {
             res.status(200).send()
         })
 
-        router.get('/probe/alive', basicAuthentication, (req, res) => {
+        router.get('/probe/alive', basicAuthMiddleware, (req, res) => {
             console.log('/probe/alive OK')
             res.status(200).send()
         })
@@ -29,24 +31,24 @@ class Bot {
             res.send('<h1>Up and running</h1>')
         })
 
-        router.post('/exit', basicAuthentication, (req, res) => {
+        router.post('/exit', basicAuthMiddleware, (req, res) => {
             res.status(200).send()
         })
 
-        router.post('/turn', basicAuthentication, (req, res) => {
+        router.post('/turn', basicAuthMiddleware, (req, res) => {
             res.status(200).send()
         })
 
         this.express.use('/', router)
     }
 
-    private getBasicAuthentication() {
-        const user = configuration.basicAuthCredentials.user
-        const password = configuration.basicAuthCredentials.password
+    private createBasicAuthMiddelware() {
+        const user = this.configuration.basicAuth.user
+        const password = this.configuration.basicAuth.password
         let systemUser = {}
         systemUser[user] = password
         return basicAuth({users: systemUser})
     }
 }
 
-export default new Bot().express
+export default Bot
