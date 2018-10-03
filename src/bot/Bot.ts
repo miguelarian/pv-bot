@@ -26,7 +26,7 @@ class Bot {
         })
 
         router.get('/', (req, res) => {
-            res.send('<h1>Up un running</h1>')
+            res.send('<h1>Up and running</h1>')
         })
 
         router.post('/exit', basicAuthentication, (req, res) => {
