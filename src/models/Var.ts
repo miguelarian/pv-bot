@@ -1,5 +1,10 @@
 // This is used in many places (turn counter, warrior ap/health, item/weapon durability, …).
 class Var {
-    current: string
-    total: string
+    current: number
+    total: number
+
+    constructor(current: number, total: number) {
+        this.current = current
+        this.total = total
+    }
 }

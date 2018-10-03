@@ -1,4 +1,4 @@
-const ActionsCost: { [userId: string]: number } = {
+const ActionsCosts: { [userId: string]: number } = {
     attack: 0,
     defend: 4,
     insult: 2,
@@ -12,5 +12,12 @@ class Action {
     action: string
     source: string
     target: string
-    extra: string
+    extra: object
+
+    constructor(action: string, source: string, target?: string, extra?: object) {
+        this.action = action
+        this.source = source
+        this.target = target
+        this.extra = extra
+    }
 }
