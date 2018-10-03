@@ -1,7 +1,7 @@
 import * as express from 'express'
 import * as bodyParser from 'body-parser'
 import * as basicAuth from 'express-basic-auth'
-import * as configuration from './Configuration'
+import * as configuration from '../config/Configuration'
 class Bot {
     public express: express.Application
 
