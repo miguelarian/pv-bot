@@ -8,7 +8,7 @@ const ActionsCosts: { [userId: string]: number } = {
     use: 3
 }
 
-class Action {
+export class Action {
     action: string
     source: string
     target: string
@@ -21,3 +21,4 @@ class Action {
         this.extra = extra
     }
 }
+

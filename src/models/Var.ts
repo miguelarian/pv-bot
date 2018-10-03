@@ -1,5 +1,5 @@
 // This is used in many places (turn counter, warrior ap/health, item/weapon durability, …).
-class Var {
+export class Var {
     current: number
     total: number
 

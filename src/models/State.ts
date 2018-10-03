@@ -1,4 +1,9 @@
-class State {
+import { Var } from "./Var";
+import { Warrior } from "./Warrior";
+import { Item } from "./Item";
+import { Weapon } from "./Weapon";
+
+export class State {
     turns: Var
     allies: Warrior[]
     enemies: Warrior[]

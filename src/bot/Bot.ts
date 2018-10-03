@@ -2,16 +2,20 @@ import * as express from 'express'
 import * as bodyParser from 'body-parser'
 import * as basicAuth from 'express-basic-auth'
 import Configuration, * as configuration from '../config/Configuration'
+import { State } from '../models/State';
+import { Engine } from '../game/Engine';
 
 class Bot {
     public express: express.Application
     private configuration: Configuration
+    private engine: Engine
 
-    constructor(configuration: Configuration) {
+    constructor(configuration: Configuration, engine: Engine) {
         this.configuration = configuration
         this.express = express()
         this.express.use(bodyParser.json());
         this.configRouting()
+        this.engine = engine
     }
 
     private configRouting() {
@@ -36,6 +40,8 @@ class Bot {
         })
 
         router.post('/turn', basicAuthMiddleware, (req, res) => {
+            let state = req.body as State
+            this.engine.process(state)
             res.status(200).send()
         })
 

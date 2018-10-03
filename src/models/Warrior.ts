@@ -1,4 +1,8 @@
-class Warrior {
+import { Weapon } from "./Weapon";
+import { Item } from "./Item";
+import { Var } from "./Var";
+
+export class Warrior {
     id: string
     name: string
     warriorClass: string

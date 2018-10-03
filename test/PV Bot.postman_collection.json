@@ -1,10 +1,8 @@
 {
-	"variables": [],
 	"info": {
+		"_postman_id": "e82edc1b-e7f8-4630-834e-da8e44493e39",
 		"name": "PV Bot",
-		"_postman_id": "b787bc06-181c-7ce3-fbb0-d8517af97154",
-		"description": "",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
@@ -23,17 +21,28 @@
 				}
 			],
 			"request": {
-				"url": "localhost:3000/probe/ready",
 				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Basic ZiNjazFOZzpmMWdIdDNy",
-						"description": ""
+						"value": "Basic ZiNjazFOZzpmMWdIdDNy"
 					}
 				],
-				"body": {},
-				"description": ""
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/probe/ready",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"probe",
+						"ready"
+					]
+				}
 			},
 			"response": []
 		},
@@ -53,17 +62,28 @@
 				}
 			],
 			"request": {
-				"url": "localhost:3000/probe/alive",
 				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Basic ZiNjazFOZzpmMWdIdDNy",
-						"description": ""
+						"value": "Basic ZiNjazFOZzpmMWdIdDNy"
 					}
 				],
-				"body": {},
-				"description": ""
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/probe/alive",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"probe",
+						"alive"
+					]
+				}
 			},
 			"response": []
 		},
@@ -83,17 +103,27 @@
 				}
 			],
 			"request": {
-				"url": "localhost:3000/exit",
 				"method": "POST",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Basic ZiNjazFOZzpmMWdIdDNy",
-						"description": ""
+						"value": "Basic ZiNjazFOZzpmMWdIdDNy"
 					}
 				],
-				"body": {},
-				"description": ""
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/exit",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"exit"
+					]
+				}
 			},
 			"response": []
 		},
@@ -113,25 +143,31 @@
 				}
 			],
 			"request": {
-				"url": "localhost:3000/turn",
 				"method": "POST",
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
+						"value": "application/json"
 					},
 					{
 						"key": "Authorization",
-						"value": "Basic ZiNjazFOZzpmMWdIdDNy",
-						"description": ""
+						"value": "Basic ZiNjazFOZzpmMWdIdDNy"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"turns\": { \"current\": 1, \"total\": 10 },\r\n    \"allies\": [\r\n        {\r\n            \"id\": \"00000000-0000-0000-0000-111111111111\",\r\n            \"name\": \"c.cobo\",\r\n            \"class\": \"payvisiano\",\r\n            \"health\": { \"current\": 100, \"total\": 100 },\r\n            \"ap\": { \"current\": 6, \"total\": 6 },\r\n            \"weapons\": [ .. ],\r\n            \"items\": [ .. ],\r\n        },\r\n        .. ],\r\n    \"enemies\": [\r\n        {\r\n            \"id\": \"00000000-0000-0000-0000-222222222222\",\r\n            \"name\": \"toq\",\r\n            \"class\": \"payvisiano\",\r\n            \"health\": { \"current\": 100, \"total\": 100 },\r\n            \"ap\": { \"current\": 6, \"total\": 6 },\r\n            \"weapons\": [ .. ],\r\n            \"items\": [ .. ],\r\n        },\r\n        .. ],\r\n    \"weapons\": [\r\n        {\r\n            \"id\": \"00000000-0000-0000-aaaa-111111111111\",\r\n            \"name\": \"Flame Sword\",\r\n            \"ap_cost\": 6,\r\n            \"ap_damage\": 20,\r\n            \"durability\": 5\r\n        },\r\n        {\r\n            \"id\": \"00000000-0000-0000-aaaa-222222222222\",\r\n            \"name\": \"Icy Dagger\",\r\n            \"ap_cost\": 3,\r\n            \"ap_damage\": 13,\r\n            \"durability\": 2\r\n        },\r\n        .. ],\r\n    \"items\": [\r\n        {\r\n            \"id\": \"00000000-0000-0000-bbbb-111111111111\",\r\n            \"name\": \"Bag of Shame\"\r\n        },\r\n        {\r\n            \"id\": \"00000000-0000-0000-bbbb-222222222222\",\r\n            \"name\": \"Soy milk coffee\"\r\n        },\r\n        .. ]\r\n}\r\n"
+					"raw": "{\r\n    \"turns\": { \"current\": 1, \"total\": 10 },\r\n    \"allies\": [\r\n        {\r\n            \"id\": \"00000000-0000-0000-0000-111111111111\",\r\n            \"name\": \"c.cobo\",\r\n            \"class\": \"payvisiano\",\r\n            \"health\": { \"current\": 100, \"total\": 100 },\r\n            \"ap\": { \"current\": 6, \"total\": 6 },\r\n            \"weapons\": [],\r\n            \"items\": []\r\n        }\r\n\t],\r\n    \"enemies\": [\r\n        {\r\n            \"id\": \"00000000-0000-0000-0000-222222222222\",\r\n            \"name\": \"toq\",\r\n            \"class\": \"payvisiano\",\r\n            \"health\": { \"current\": 100, \"total\": 100 },\r\n            \"ap\": { \"current\": 6, \"total\": 6 },\r\n            \"weapons\": [],\r\n            \"items\": []\r\n        }\r\n    ],\r\n    \"weapons\": [\r\n        {\r\n            \"id\": \"00000000-0000-0000-aaaa-111111111111\",\r\n            \"name\": \"Flame Sword\",\r\n            \"ap_cost\": 6,\r\n            \"ap_damage\": 20,\r\n            \"durability\": 5\r\n        },\r\n        {\r\n            \"id\": \"00000000-0000-0000-aaaa-222222222222\",\r\n            \"name\": \"Icy Dagger\",\r\n            \"ap_cost\": 3,\r\n            \"ap_damage\": 13,\r\n            \"durability\": 2\r\n        }\r\n    ],\r\n    \"items\": [\r\n        {\r\n            \"id\": \"00000000-0000-0000-bbbb-111111111111\",\r\n            \"name\": \"Bag of Shame\"\r\n        },\r\n        {\r\n            \"id\": \"00000000-0000-0000-bbbb-222222222222\",\r\n            \"name\": \"Soy milk coffee\"\r\n        }\r\n    ]\r\n}\r\n"
 				},
-				"description": ""
+				"url": {
+					"raw": "localhost:3000/turn",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"turn"
+					]
+				}
 			},
 			"response": []
 		}

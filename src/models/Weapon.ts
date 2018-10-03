@@ -1,8 +1,10 @@
+import { Var } from "./Var";
+
 const Weapons: { [userId: string]: number } = {
 
 }
 
-class Weapon {
+export class Weapon {
     id: string
     name: string
     ap_cost: number
