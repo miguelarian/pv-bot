@@ -9,8 +9,10 @@ This is Fucking-Fighter bot for Payvision Bots League.
 
 ## Deploy with docker
 
-1. docker build . -t pv-bot
+1. docker build . -t miguelvr88/pv-bot
 2. docker run -d -p 3000:3000 pv-bot:latest
+
+(Optionally, you can override the NODE_ENV variable with parameter: -e NODE_ENV=environment)
 
 ## Payvision bots league documentation
 

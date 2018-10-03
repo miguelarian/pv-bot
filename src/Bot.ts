@@ -3,6 +3,15 @@ import * as bodyParser from 'body-parser'
 import * as basicAuth from 'express-basic-auth'
 import * as configuration from './Configuration'
 
+const FF_logo = `
+####### #     #  #####  #    # ### #     #  #####     ####### ###  #####  #     # ####### ####### ######     ######  #######    #    ######  #     #    ####### #######    ######  #     # #     # ######  #       ####### 
+#       #     # #     # #   #   #  ##    # #     #    #        #  #     # #     #    #    #       #     #    #     # #         # #   #     #  #   #        #    #     #    #     # #     # ##   ## #     # #       #       
+#       #     # #       #  #    #  # #   # #          #        #  #       #     #    #    #       #     #    #     # #        #   #  #     #   # #         #    #     #    #     # #     # # # # # #     # #       #       
+#####   #     # #       ###     #  #  #  # #  ####    #####    #  #  #### #######    #    #####   ######     ######  #####   #     # #     #    #          #    #     #    ######  #     # #  #  # ######  #       #####   
+#       #     # #       #  #    #  #   # # #     #    #        #  #     # #     #    #    #       #   #      #   #   #       ####### #     #    #          #    #     #    #   #   #     # #     # #     # #       #       
+#       #     # #     # #   #   #  #    ## #     #    #        #  #     # #     #    #    #       #    #     #    #  #       #     # #     #    #          #    #     #    #    #  #     # #     # #     # #       #       
+#        #####   #####  #    # ### #     #  #####     #       ###  #####  #     #    #    ####### #     #    #     # ####### #     # ######     #          #    #######    #     #  #####  #     # ######  ####### #######`
+
 class Bot {
     public express: express.Application
 
@@ -26,6 +35,11 @@ class Bot {
             res.sendStatus(200)
         })
 
+        router.get('/', (req, res) => {
+            console.log('/ OK')
+            res.send(FF_logo)
+        })
+
         router.post('/exit', (req, res) => {
             console.log('/exit OK')
             res.sendStatus(200)
@@ -45,8 +59,6 @@ class Bot {
         const user = configuration.basicAuthCredentials.user
         const password = configuration.basicAuthCredentials.password
 
-        console.log(user)
-        console.log(password)
         let cred = {}
         cred[user] = password
 

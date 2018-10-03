@@ -10,11 +10,9 @@ RUN npm install
 COPY . .
 RUN npm run build
 
-# Bundle app source
-COPY . .
-
 EXPOSE 3000
 
+RUN echo "NODE_ENV value is: $NODE_ENV"
 ENV NODE_ENV=production
 
 CMD ["node", "dist/"]
