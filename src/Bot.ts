@@ -18,19 +18,29 @@ class Bot {
     constructor() {
         this.express = express()
         this.express.use(bodyParser.json());
-        this.configAuth()
+        // this.configAuth()
         this.configRouter()
     }
 
     private configRouter() {
         const router = express.Router()
 
-        router.get('/probe/ready', (req, res) => {
+        const basicAuth = require('express-basic-auth')
+
+        const user = configuration.basicAuthCredentials.user
+        const password = configuration.basicAuthCredentials.password
+
+        let cred = {}
+        cred[user] = password
+
+        let ba = basicAuth(({ users: cred }), (req: basicAuth.IBasicAuthedRequest, res, next) => { next() })
+
+        router.get('/probe/ready', ba, (req, res) => {
             console.log('/probe/ready OK')
             res.sendStatus(200)
         })
 
-        router.get('/probe/alive', (req, res) => {
+        router.get('/probe/alive', ba, (req, res) => {
             console.log('/probe/alive OK')
             res.sendStatus(200)
         })
@@ -40,12 +50,12 @@ class Bot {
             res.send(FF_logo)
         })
 
-        router.post('/exit', (req, res) => {
+        router.post('/exit', ba, (req, res) => {
             console.log('/exit OK')
             res.sendStatus(200)
         })
 
-        router.post('/turn', (req, res) => {
+        router.post('/turn', ba, (req, res) => {
             console.log('/turn OK')
             res.sendStatus(200)
         })
