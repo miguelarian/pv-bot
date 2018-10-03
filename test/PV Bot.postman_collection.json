@@ -9,6 +9,19 @@
 	"item": [
 		{
 			"name": "/probe/ready",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						]
+					}
+				}
+			],
 			"request": {
 				"url": "localhost:3000/probe/ready",
 				"method": "GET",
@@ -26,6 +39,19 @@
 		},
 		{
 			"name": "/probe/alive",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						]
+					}
+				}
+			],
 			"request": {
 				"url": "localhost:3000/probe/alive",
 				"method": "GET",
@@ -43,6 +69,19 @@
 		},
 		{
 			"name": "/exit",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						]
+					}
+				}
+			],
 			"request": {
 				"url": "localhost:3000/exit",
 				"method": "POST",
@@ -60,6 +99,19 @@
 		},
 		{
 			"name": "/turn",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						]
+					}
+				}
+			],
 			"request": {
 				"url": "localhost:3000/turn",
 				"method": "POST",
@@ -77,7 +129,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"turns\": { \"current\": 42, \"total\": 69 },\r\n    \"allies\": [\r\n        {\r\n            \"id\": \"00000000-0000-0000-0000-111111111111\",\r\n            \"name\": \"c.cobo\",\r\n            \"class\": \"payvisiano\",\r\n            \"health\": { \"current\": 100, \"total\": 100 },\r\n            \"ap\": { \"current\": 6, \"total\": 6 },\r\n            \"weapons\": [ .. ],\r\n            \"items\": [ .. ],\r\n        },\r\n        .. ],\r\n    \"enemies\": [\r\n        {\r\n            \"id\": \"00000000-0000-0000-0000-222222222222\",\r\n            \"name\": \"toq\",\r\n            \"class\": \"payvisiano\",\r\n            \"health\": { \"current\": 100, \"total\": 100 },\r\n            \"ap\": { \"current\": 6, \"total\": 6 },\r\n            \"weapons\": [ .. ],\r\n            \"items\": [ .. ],\r\n        },\r\n        .. ],\r\n    \"weapons\": [\r\n        {\r\n            \"id\": \"00000000-0000-0000-aaaa-111111111111\",\r\n            \"name\": \"Flame Sword\",\r\n            \"ap_cost\": 6,\r\n            \"ap_damage\": 20,\r\n            \"durability\": 5\r\n        },\r\n        {\r\n            \"id\": \"00000000-0000-0000-aaaa-222222222222\",\r\n            \"name\": \"Icy Dagger\",\r\n            \"ap_cost\": 3,\r\n            \"ap_damage\": 13,\r\n            \"durability\": 2\r\n        },\r\n        .. ],\r\n    \"items\": [\r\n        {\r\n            \"id\": \"00000000-0000-0000-bbbb-111111111111\",\r\n            \"name\": \"Bag of Shame\"\r\n        },\r\n        {\r\n            \"id\": \"00000000-0000-0000-bbbb-222222222222\",\r\n            \"name\": \"Soy milk coffee\"\r\n        },\r\n        .. ]\r\n}\r\n"
+					"raw": "{\r\n    \"turns\": { \"current\": 1, \"total\": 10 },\r\n    \"allies\": [\r\n        {\r\n            \"id\": \"00000000-0000-0000-0000-111111111111\",\r\n            \"name\": \"c.cobo\",\r\n            \"class\": \"payvisiano\",\r\n            \"health\": { \"current\": 100, \"total\": 100 },\r\n            \"ap\": { \"current\": 6, \"total\": 6 },\r\n            \"weapons\": [ .. ],\r\n            \"items\": [ .. ],\r\n        },\r\n        .. ],\r\n    \"enemies\": [\r\n        {\r\n            \"id\": \"00000000-0000-0000-0000-222222222222\",\r\n            \"name\": \"toq\",\r\n            \"class\": \"payvisiano\",\r\n            \"health\": { \"current\": 100, \"total\": 100 },\r\n            \"ap\": { \"current\": 6, \"total\": 6 },\r\n            \"weapons\": [ .. ],\r\n            \"items\": [ .. ],\r\n        },\r\n        .. ],\r\n    \"weapons\": [\r\n        {\r\n            \"id\": \"00000000-0000-0000-aaaa-111111111111\",\r\n            \"name\": \"Flame Sword\",\r\n            \"ap_cost\": 6,\r\n            \"ap_damage\": 20,\r\n            \"durability\": 5\r\n        },\r\n        {\r\n            \"id\": \"00000000-0000-0000-aaaa-222222222222\",\r\n            \"name\": \"Icy Dagger\",\r\n            \"ap_cost\": 3,\r\n            \"ap_damage\": 13,\r\n            \"durability\": 2\r\n        },\r\n        .. ],\r\n    \"items\": [\r\n        {\r\n            \"id\": \"00000000-0000-0000-bbbb-111111111111\",\r\n            \"name\": \"Bag of Shame\"\r\n        },\r\n        {\r\n            \"id\": \"00000000-0000-0000-bbbb-222222222222\",\r\n            \"name\": \"Soy milk coffee\"\r\n        },\r\n        .. ]\r\n}\r\n"
 				},
 				"description": ""
 			},
