@@ -2,16 +2,6 @@ import * as express from 'express'
 import * as bodyParser from 'body-parser'
 import * as basicAuth from 'express-basic-auth'
 import * as configuration from './Configuration'
-
-const FF_logo = `
-####### #     #  #####  #    # ### #     #  #####     ####### ###  #####  #     # ####### ####### ######     ######  #######    #    ######  #     #    ####### #######    ######  #     # #     # ######  #       ####### 
-#       #     # #     # #   #   #  ##    # #     #    #        #  #     # #     #    #    #       #     #    #     # #         # #   #     #  #   #        #    #     #    #     # #     # ##   ## #     # #       #       
-#       #     # #       #  #    #  # #   # #          #        #  #       #     #    #    #       #     #    #     # #        #   #  #     #   # #         #    #     #    #     # #     # # # # # #     # #       #       
-#####   #     # #       ###     #  #  #  # #  ####    #####    #  #  #### #######    #    #####   ######     ######  #####   #     # #     #    #          #    #     #    ######  #     # #  #  # ######  #       #####   
-#       #     # #       #  #    #  #   # # #     #    #        #  #     # #     #    #    #       #   #      #   #   #       ####### #     #    #          #    #     #    #   #   #     # #     # #     # #       #       
-#       #     # #     # #   #   #  #    ## #     #    #        #  #     # #     #    #    #       #    #     #    #  #       #     # #     #    #          #    #     #    #    #  #     # #     # #     # #       #       
-#        #####   #####  #    # ### #     #  #####     #       ###  #####  #     #    #    ####### #     #    #     # ####### #     # ######     #          #    #######    #     #  #####  #     # ######  ####### #######`
-
 class Bot {
     public express: express.Application
 
@@ -37,27 +27,27 @@ class Bot {
 
         router.get('/probe/ready', ba, (req, res) => {
             console.log('/probe/ready OK')
-            res.sendStatus(200)
+            res.status(200).send()
         })
 
         router.get('/probe/alive', ba, (req, res) => {
             console.log('/probe/alive OK')
-            res.sendStatus(200)
+            res.status(200).send()
         })
 
         router.get('/', (req, res) => {
             console.log('/ OK')
-            res.send(FF_logo)
+            res.send('<h1>Up un running</h1>')
         })
 
         router.post('/exit', ba, (req, res) => {
             console.log('/exit OK')
-            res.sendStatus(200)
+            res.status(200).send()
         })
 
         router.post('/turn', ba, (req, res) => {
             console.log('/turn OK')
-            res.sendStatus(200)
+            res.status(200).send()
         })
 
         this.express.use('/', router)
