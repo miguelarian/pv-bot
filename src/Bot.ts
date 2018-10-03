@@ -8,65 +8,44 @@ class Bot {
     constructor() {
         this.express = express()
         this.express.use(bodyParser.json());
-        // this.configAuth()
-        this.configRouter()
+        this.configRouting()
     }
 
-    private configRouter() {
+    private configRouting() {
         const router = express.Router()
 
-        const basicAuth = require('express-basic-auth')
+        let basicAuthentication = this.getBasicAuthentication()
 
-        const user = configuration.basicAuthCredentials.user
-        const password = configuration.basicAuthCredentials.password
-
-        let cred = {}
-        cred[user] = password
-
-        let ba = basicAuth(({ users: cred }), (req: basicAuth.IBasicAuthedRequest, res, next) => { next() })
-
-        router.get('/probe/ready', ba, (req, res) => {
-            console.log('/probe/ready OK')
+        router.get('/probe/ready', basicAuthentication, (req, res) => {
             res.status(200).send()
         })
 
-        router.get('/probe/alive', ba, (req, res) => {
+        router.get('/probe/alive', basicAuthentication, (req, res) => {
             console.log('/probe/alive OK')
             res.status(200).send()
         })
 
         router.get('/', (req, res) => {
-            console.log('/ OK')
             res.send('<h1>Up un running</h1>')
         })
 
-        router.post('/exit', ba, (req, res) => {
-            console.log('/exit OK')
+        router.post('/exit', basicAuthentication, (req, res) => {
             res.status(200).send()
         })
 
-        router.post('/turn', ba, (req, res) => {
-            console.log('/turn OK')
+        router.post('/turn', basicAuthentication, (req, res) => {
             res.status(200).send()
         })
 
         this.express.use('/', router)
     }
 
-    private configAuth() {
-        const basicAuth = require('express-basic-auth')
-
+    private getBasicAuthentication() {
         const user = configuration.basicAuthCredentials.user
         const password = configuration.basicAuthCredentials.password
-
-        let cred = {}
-        cred[user] = password
-
-        this.express.use(basicAuth({
-            users: cred
-        }), (req: basicAuth.IBasicAuthedRequest, res, next) => {
-            next()
-        })
+        let systemUser = {}
+        systemUser[user] = password
+        return basicAuth({users: systemUser})
     }
 }
 
