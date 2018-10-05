@@ -1,6 +1,6 @@
 import { Var } from "./Var";
 
-const Weapons: { [userId: string]: number } = {
+const Weapons: { [weaponId: string]: number } = {
 
 }
 
