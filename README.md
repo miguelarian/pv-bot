@@ -3,9 +3,10 @@
 This is Fucking-Fighter bot for Payvision Bots League.
 
 ## Build dev
-
-1. npm install
-2. npm start -> this will create a web server in localhost:3000
+```bash
+    1. npm install
+    2. npm start -> this will create a web server in localhost:3000
+```
 
 ## Authentication
 
@@ -13,8 +14,10 @@ The bot is secured by basic authentication. Credentials are received via environ
 
 ## Deploy with docker
 
-1. docker build . -t miguelvr88/pv-bot
-2. docker run -d -p 3000:3000 miguelvr88/pv-bot:latest
+```bash
+    1. docker build . -t miguelvr88/pv-bot
+    2. docker run -d -p 3000:3000 miguelvr88/pv-bot:latest
+```
 
 (Optionally, you can override the NODE_ENV variable with parameter: -e NODE_ENV=environment)
 
