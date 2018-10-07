@@ -2,8 +2,8 @@ import * as express from 'express'
 import * as bodyParser from 'body-parser'
 import * as basicAuth from 'express-basic-auth'
 import Configuration, * as configuration from '../config/Configuration'
-import { State } from '../models/State';
-import { BotEngine } from './BotEngine';
+import { State } from '../models/State'
+import { BotEngine } from './BotEngine'
 
 class Bot {
     public express: express.Application

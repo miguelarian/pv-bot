@@ -1,7 +1,7 @@
-import { State } from "../models/State";
-import { Action } from "../models/Action";
-import { Item } from "../models/Item";
-import { Weapon } from "../models/Weapon";
+import { State } from "../models/State"
+import { Action } from "../models/Action"
+import { Item } from "../models/Item"
+import { Weapon } from "../models/Weapon"
 
 export class BotEngine {
 

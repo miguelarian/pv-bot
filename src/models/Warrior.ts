@@ -1,6 +1,6 @@
-import { Weapon } from "./Weapon";
-import { Item } from "./Item";
-import { Var } from "./Var";
+import { Item } from "./Item"
+import { Var } from "./Var"
+import { Weapon } from "./Weapon"
 
 export class Warrior {
     id: string
