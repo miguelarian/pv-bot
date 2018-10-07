@@ -2,9 +2,6 @@ import BasicAuthorization from "./config/BasicAuthorization";
 import Bot from './bot/Bot'
 import Configuration from './config/Configuration';
 import { BotEngine } from './bot/BotEngine';
-import { Weapon } from "./models/Weapon";
-import { Item } from "./models/Item";
-import { Var } from "./models/Var";
 
 console.log('*** STARTING FUCKING-FIGHTER BOT ***')
 

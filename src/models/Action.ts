@@ -31,7 +31,7 @@ export class Action {
     }
 
     static getActionName(action: ActionType) : string {
-        return ActionType[ActionType.defend]
+        return ActionType[action]
     }
 
     constructor(action: string, source: string, target?: string, extra?: ExtraAction) {

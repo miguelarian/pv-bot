@@ -1,27 +1,29 @@
 import { Action } from "../models/Action"
 import { State } from "../models/State"
-import { Strategy } from "./strategies/strategy"
-import { StrategyFactory } from "./strategies/strategyFactory";
+import { StrategyAI } from "./strategies/StrategyAI";
 
 export class BotEngine {
     private state: State
+    private ai: StrategyAI
+    constructor() {
+        this.ai = new StrategyAI()
+    }
 
     process(state: State) : Action[] {
         this.state = state
         console.log(`Turn ${state.turns.current}: Processing state...`)
 
-        const strategy = StrategyFactory.getStrategy(this.state)
+        const warriorsStrategies = this.ai.getStrategy(this.state)
 
-        return this.calculateActions(strategy)
-    }
+        console.log(`Warriors strategies: ${warriorsStrategies.toString()}`)
 
-    private calculateActions(strategy: Strategy) : Action[] {
-        const actions = [
-            new Action('rest', '00000000-0000-0000-0000-111111111111'),
-            new Action('rest', '00000000-0000-0000-0000-111111111111')
-        ]
+        let actions = new Array<Action>()
+        warriorsStrategies.forEach(strategy => {
+            return actions.push(...strategy.getActions())
+        });
 
         console.log(`Actions returned: ${actions.map(i => i.action).join(',')}`)
+
         return actions
     }
 }

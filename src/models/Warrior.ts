@@ -2,6 +2,10 @@ import { Item } from "./Item"
 import { Var } from "./Var"
 import { Weapon } from "./Weapon"
 
+enum WarriorClass {
+    Payvisiano = 1
+}
+
 export class Warrior {
     id: string
     name: string

@@ -1,5 +1,9 @@
 
 // Basic auth credentials are received as env variables.
+// Default credentias for non-production environments.
+const BASIC_USERNAME = 'f#ck1Ng'
+const BASIC_PASSWORD = 'f1gHt3r'
+
 class BasicAuthorization {
     user: string
     password: string
@@ -11,8 +15,8 @@ class BasicAuthorization {
 
     private getCredentials() {
         let  basicAuthCredentials = {
-            user: 'f#ck1Ng',
-            password: 'f1gHt3r'
+            user: BASIC_USERNAME,
+            password: BASIC_PASSWORD
         }
 
         if(process.env.NODE_ENV === 'production') {

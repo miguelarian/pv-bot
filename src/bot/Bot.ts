@@ -4,6 +4,7 @@ import * as basicAuth from 'express-basic-auth'
 import Configuration, * as configuration from '../config/Configuration'
 import { State } from '../models/State'
 import { BotEngine } from './BotEngine'
+import { Action } from '../models/Action'
 
 class Bot {
     public express: express.Application
@@ -42,7 +43,8 @@ class Bot {
         router.post('/turn', basicAuthMiddleware, (req, res) => {
             const state = req.body as State
             const actions = this.engine.process(state)
-            res.status(200).send(actions)
+            const response = this.createBotResponse(actions)
+            res.status(200).send(response)
         })
 
         this.express.use('/', router)
@@ -54,6 +56,12 @@ class Bot {
         let systemUser = {}
         systemUser[user] = password
         return basicAuth({users: systemUser})
+    }
+
+    private createBotResponse(actions: Action[]) {
+        return {
+            "actions": actions
+        }
     }
 }
 
