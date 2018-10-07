@@ -2,7 +2,7 @@ import { State } from "../models/State"
 import { Action } from "../models/Action"
 
 export class BotEngine {
-    state: State
+    private state: State
 
     process(state: State) : Action[] {
         this.state = state
