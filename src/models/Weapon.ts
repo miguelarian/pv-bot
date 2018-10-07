@@ -1,9 +1,5 @@
 import { Var } from "./Var";
 
-const Weapons: { [weaponId: string]: number } = {
-
-}
-
 export class Weapon {
     id: string
     name: string

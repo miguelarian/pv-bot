@@ -1,3 +1,5 @@
+import { ExtraAction } from "./ExtraAction";
+
 const ActionsCosts: { [userId: string]: number } = {
     attack: 0,
     defend: 4,
@@ -12,9 +14,9 @@ export class Action {
     action: string
     source: string
     target: string
-    extra: object
+    extra: ExtraAction
 
-    constructor(action: string, source: string, target?: string, extra?: object) {
+    constructor(action: string, source: string, target?: string, extra?: ExtraAction) {
         this.action = action
         this.source = source
         this.target = target
