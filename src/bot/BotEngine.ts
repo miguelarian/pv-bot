@@ -17,7 +17,7 @@ export class BotEngine {
             new Action('rest', '00000000-0000-0000-0000-111111111111')
         ]
 
-        console.log(`Actions returned: ${actions}`)
+        console.log(`Actions returned: ${actions.map(i => i.action).join(',')}`)
         return actions
     }
 }
