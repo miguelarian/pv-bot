@@ -12,11 +12,7 @@ const port = process.env.PORT || 3000
 
 const authentication = new BasicAuthorization()
 const configuration = new Configuration(authentication)
-
-
-const itemList = [ new Item('00000000-0000-0000-bbbb-111111111111', 'Bag of Shame') ]
-const weaponsList = [ new Weapon('00000000-0000-0000-aaaa-111111111111', 'Flame Sword', 6, 20 , new Var(5, 5)) ]
-const botEngine = new BotEngine(itemList, weaponsList)
+const botEngine = new BotEngine()
 
 const fuckingFighter = new Bot(configuration, botEngine)
 fuckingFighter.express.listen(port, (error) => {
