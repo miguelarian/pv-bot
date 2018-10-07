@@ -1,14 +1,12 @@
 import { Strategy, StrategyType } from "./Strategy";
 import { Action } from "../../models/Action";
 
-export class Rest extends Strategy {
+export class Defense extends Strategy {
     constructor(warriorId: string) {
-        super(StrategyType.rest, warriorId);
+        super(StrategyType.defense, warriorId);
     }
 
     getActions(): Action[] {
-        return [
-            new Action('rest', '00000000-0000-0000-0000-111111111111')
-        ]
+        throw new Error("Method not implemented.");
     }
 }

@@ -1,6 +1,6 @@
 import { State } from "../../models/State";
-import { Strategy } from "./strategy";
-import { Rest } from "./rest";
+import { Strategy } from "./Strategy";
+import { Rest } from "./Rest";
 import { Warrior } from "../../models/Warrior";
 
 export class StrategyAI {

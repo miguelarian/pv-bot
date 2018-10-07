@@ -1,9 +1,14 @@
 import { Action } from "../../models/Action";
 
 export enum StrategyType {
-    checkmate = 1,
+    ultraDefense = 1,
+    defense,
+    default,
+    attack,
+    ultraAttack,
     rest,
-    health
+    recover,
+    random
 }
 export abstract class Strategy {
     // TODO: review this model... warriorId required?
