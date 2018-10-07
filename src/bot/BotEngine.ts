@@ -1,5 +1,7 @@
-import { State } from "../models/State"
 import { Action } from "../models/Action"
+import { State } from "../models/State"
+import { Strategy } from "./strategies/strategy"
+import { StrategyFactory } from "./strategies/strategyFactory";
 
 export class BotEngine {
     private state: State
@@ -8,10 +10,12 @@ export class BotEngine {
         this.state = state
         console.log(`Turn ${state.turns.current}: Processing state...`)
 
-        return this.calculateActions()
+        const strategy = StrategyFactory.getStrategy(this.state)
+
+        return this.calculateActions(strategy)
     }
 
-    private calculateActions() : Action[] {
+    private calculateActions(strategy: Strategy) : Action[] {
         const actions = [
             new Action('rest', '00000000-0000-0000-0000-111111111111'),
             new Action('rest', '00000000-0000-0000-0000-111111111111')
