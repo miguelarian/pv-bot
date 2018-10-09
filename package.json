@@ -2,11 +2,11 @@
     "name": "pv-bot",
     "version": "1.0.0",
     "description": "Bot application for Payvision bots league",
-    "main": "server.js",
+    "main": "index.js",
     "scripts": {
         "lint": "eslint --fix ./src/**/*",
         "build": "tsc",
-        "build:dev": "nodemon --watch 'src/**/*.ts' --exec ts-node src/index.ts NODE_ENV=development",
+        "build:dev": "SET NODE_ENV=development && nodemon",
         "start": "npm run build:dev"
     },
     "repository": {

@@ -8,6 +8,12 @@ This is Fucking-Fighter bot for Payvision Bots League.
     2. npm start -> this will create a web server in localhost:3000
 ```
 
+## Global npm packages
+
+1. npm install -g nodemon
+2. npm install -g ts-node
+3. npm install -g eslint
+
 ## Authentication
 
 The bot is secured by basic authentication. Credentials are received via environment variables. However, you can use hardcoded credentials for development purposes by setting NODE_ENV=development.

@@ -30,7 +30,7 @@ class Bot {
         })
 
         router.get('/', (req, res) => {
-            res.send('<h1>1Up and running</h1>')
+            res.send('<h1>Up and running</h1>')
         })
 
         router.post('/exit', basicAuthMiddleware, (req, res) => {
