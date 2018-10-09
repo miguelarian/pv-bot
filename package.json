@@ -7,7 +7,7 @@
         "lint": "eslint --fix ./src/**/*",
         "build": "tsc",
         "build:dev": "SET NODE_ENV=development && nodemon",
-        "start": "npm run build:dev"
+        "start": "yarn run build:dev"
     },
     "repository": {
         "type": "git",
