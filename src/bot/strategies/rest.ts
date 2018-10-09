@@ -1,14 +1,13 @@
-import { Strategy, StrategyType } from "./Strategy";
-import { Action } from "../../models/Action";
+import { Strategy, StrategyType } from './Strategy';
+import { Action } from '../../models/Action';
 
 export class Rest extends Strategy {
-    constructor(warriorId: string) {
+    constructor (warriorId: string) {
         super(StrategyType.rest, warriorId);
     }
-
-    getActions(): Action[] {
+    getActions (): Action[] {
         return [
             new Action('rest', '00000000-0000-0000-0000-111111111111')
-        ]
+        ];
     }
 }

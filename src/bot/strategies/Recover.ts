@@ -1,12 +1,11 @@
-import { Strategy, StrategyType } from "./Strategy";
-import { Action } from "../../models/Action";
+import { Strategy, StrategyType } from './Strategy';
+import { Action } from '../../models/Action';
 
 export class Recover extends Strategy {
-    constructor(warriorId: string) {
+    constructor (warriorId: string) {
         super(StrategyType.recover, warriorId);
     }
-
-    getActions(): Action[] {
-        throw new Error("Method not implemented.");
+    getActions (): Action[] {
+        throw new Error('Method not implemented.');
     }
 }

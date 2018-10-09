@@ -1,4 +1,4 @@
-import { ExtraAction } from "./ExtraAction"
+import { ExtraAction } from './ExtraAction';
 
 export enum ActionType {
     attack = 1,
@@ -15,7 +15,6 @@ export class Action {
     source: string
     target: string
     extra: ExtraAction
-
     static ActionsCosts: { [action: string]: number } = {
         attack: 0,
         defend: 4,
@@ -25,20 +24,16 @@ export class Action {
         take: 3,
         use: 3
     }
-
-    static getActionCost(action: ActionType) : number {
-        return Action.ActionsCosts[ActionType[action]]
+    static getActionCost (action: ActionType) : number {
+        return Action.ActionsCosts[ActionType[action]];
     }
-
-    static getActionName(action: ActionType) : string {
-        return ActionType[action]
+    static getActionName (action: ActionType) : string {
+        return ActionType[action];
     }
-
-    constructor(action: string, source: string, target?: string, extra?: ExtraAction) {
-        this.action = action
-        this.source = source
-        this.target = target
-        this.extra = extra
+    constructor (action: string, source: string, target?: string, extra?: ExtraAction) {
+        this.action = action;
+        this.source = source;
+        this.target = target;
+        this.extra = extra;
     }
 }
-
