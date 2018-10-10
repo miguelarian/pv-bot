@@ -10,15 +10,7 @@ export class BotEngine {
     process(state: State): Action[] {
         console.log(`Turn ${state.turns.current}: Processing state...`)
 
-        const warriorsStrategies = this.ai.getStrategy(state)
-        console.log(`Warriors strategies: ${warriorsStrategies.toString()}`)
-
-        let actions = new Array<Action>()
-        warriorsStrategies.forEach(strategy => {
-            return actions.push(...strategy.getActions())
-        })
-
-        console.log(`Actions returned: ${actions.map(i => i.action).join(',')}`)
+        const actions = this.ai.getStrategy(state)
 
         return actions
     }
